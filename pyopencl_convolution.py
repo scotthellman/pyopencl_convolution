@@ -122,7 +122,7 @@ def example():
     kernel = numpy.random.rand(1,3,3)
     result = convolver.convolution(batched_data,kernel,'valid')
     
-    for i in xrange(1):
+    for i in xrange(result.shape[0]):
         truth = signal.fftconvolve(batched_data[i], kernel, 'valid') 
         print(numpy.any(numpy.abs(result[i] - truth) > 0.0001))
 

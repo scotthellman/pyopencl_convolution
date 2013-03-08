@@ -1,6 +1,6 @@
 import unittest
 import numpy
-import cachedConvolution
+import pyopencl_convolution
 import scipy.signal as signal
  
 class TestOpenCLConvolution(unittest.TestCase):
@@ -21,7 +21,7 @@ class TestOpenCLConvolution(unittest.TestCase):
         self.large_kernel = numpy.random.rand(5,10,10)
         self.uneven_data = numpy.random.rand(20,4,6,8)
         self.uneven_kernel = numpy.random.rand(2,3,4)
-        self.convolver = cachedConvolution.CachedQueueConvolver()
+        self.convolver = pyopencl_convolution.CachedQueueConvolver()
         self.results = []
         
     def test_convolution_full(self):
